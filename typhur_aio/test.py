@@ -13,6 +13,7 @@ async def main():
     """Everything discovered so far"""
     logging.basicConfig(format="%(levelname)s:%(message)s", level=logging.INFO)
     async with ClientSession(
+        # Important - spaces have to be removed from the JSON requests
         json_serialize=lambda x: json.dumps(x, separators=(",", ":"))
     ) as session:
         client = TyphurClient(

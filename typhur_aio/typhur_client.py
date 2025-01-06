@@ -118,6 +118,8 @@ class TyphurClient:
         # Remove the last semicolon
         string_parts[-1] = string_parts[-1][:-1]
         string_parts.append("|")
+        
+        # Important - spaces have to be removed from the JSON requests
         string_parts.append(json.dumps(payload, separators=(",", ":")))
 
         # Unclear if this is necessary?
